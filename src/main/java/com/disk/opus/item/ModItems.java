@@ -10,18 +10,23 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 @SuppressWarnings("null")
-public class ModItems 
+public final class ModItems
 {
+    private ModItems()
+    {
+        throw new UnsupportedOperationException();
+    }
+
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Opus.MOD_ID);
 
     //#region Items
-    
+
     public static final RegistryObject<Item> TEST_TUBE = ITEMS.register("test_tube",
         () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
     //#endregion
 
-    public static void register(IEventBus eventBus) 
+    public static void register(final IEventBus eventBus)
     {
         ITEMS.register(eventBus);
     }

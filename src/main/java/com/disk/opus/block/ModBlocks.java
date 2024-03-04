@@ -16,8 +16,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 @SuppressWarnings("null")
-public class ModBlocks 
+public final class ModBlocks
 {
+    private ModBlocks()
+    {
+        throw new UnsupportedOperationException();
+    }
+
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Opus.MOD_ID);
 
     //#region Blocks
@@ -26,15 +31,15 @@ public class ModBlocks
         () -> new Block(BlockBehaviour.Properties.of(Material.SAND)), CreativeModeTab.TAB_MISC);
 
     //#endregion
-        
-    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) 
+
+    private static <T extends Block> RegistryObject<T> registerBlock(final String name, final Supplier<T> block, final CreativeModeTab tab)
     {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         ModItems.ITEMS.register(name, () -> new BlockItem(toReturn.get(), new Item.Properties().tab(tab)));
         return toReturn;
     }
 
-    public static void register(IEventBus eventBus) 
+    public static void register(final IEventBus eventBus)
     {
         BLOCKS.register(eventBus);
     }
