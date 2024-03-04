@@ -1,5 +1,7 @@
 {
     "item.opus.test_tube": "Test Tube",
 
-    "block.opus.silica_block": "Silica"
+    "block.opus.silica_block": "Silica",
+
+    "itemGroup.opustab": "Opus"
 }

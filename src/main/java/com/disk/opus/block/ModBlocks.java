@@ -1,6 +1,7 @@
 package com.disk.opus.block;
 
 import com.disk.opus.Opus;
+import com.disk.opus.item.ModCreativeModeTab;
 import com.disk.opus.item.ModItems;
 import java.util.function.Supplier;
 
@@ -23,7 +24,7 @@ public class ModBlocks
     //#region Blocks
 
     public static final RegistryObject<Block> SILICA_BLOCK = registerBlock("silica_block",
-        () -> new Block(BlockBehaviour.Properties.of(Material.SAND)), CreativeModeTab.TAB_MISC);
+        () -> new Block(BlockBehaviour.Properties.of(Material.SAND)), ModCreativeModeTab.OPUS_TAB);
 
     //#endregion
         

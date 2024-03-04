@@ -2,7 +2,6 @@ package com.disk.opus.item;
 
 import com.disk.opus.Opus;
 
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,7 +16,7 @@ public class ModItems
     //#region Items
     
     public static final RegistryObject<Item> TEST_TUBE = ITEMS.register("test_tube",
-        () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+        () -> new Item(new Item.Properties().tab(ModCreativeModeTab.OPUS_TAB)));
 
     //#endregion
 
