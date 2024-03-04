@@ -12,19 +12,14 @@ import org.apache.logging.log4j.Logger;
 import com.disk.opus.block.ModBlocks;
 import com.disk.opus.item.ModItems;
 
-
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(Opus.MOD_ID)
 public class Opus
 {
     public static final String MOD_ID = "opus";
-
-    // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
 
-    public Opus() {
-        // Item Register stuff
-
+    public Opus() 
+    {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(eventBus);
@@ -32,17 +27,14 @@ public class Opus
 
         eventBus.addListener(this::setup);
         
-
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
+        // some pre-init code
+        LOGGER.info("HELLO FROM PRE-INIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
-
-    
 }
