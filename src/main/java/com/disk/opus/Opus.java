@@ -12,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 @Mod(Opus.MOD_ID)
 public class Opus
 {
-    static final String MOD_ID = "opus";
+    public static final String MOD_ID = "opus";
 
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
