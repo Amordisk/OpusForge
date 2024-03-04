@@ -14,13 +14,13 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, Opus.MOD_ID);
 
 
-    // Items
+    // Items  ------------------------------------------------------------------------------------------------------------------
     @SuppressWarnings("null")
     public static final RegistryObject<Item> TEST_TUBE = ITEMS.register("test_tube",
      () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
 
-
+    //  ------------------------------------------------------------------------------------------------------------------------
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

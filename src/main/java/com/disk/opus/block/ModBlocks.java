@@ -21,11 +21,12 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, Opus.MOD_ID);
 
 
-    //Add blocks here
+    //Add blocks here  ---------------------------------------------------------------------------------------------------------
     public static final RegistryObject<Block> SILICA_BLOCK = registerBlock("silica_block",
          () -> new Block(BlockBehaviour.Properties.of(Material.SAND)), CreativeModeTab.TAB_MISC);
 
     
+    //  ------------------------------------------------------------------------------------------------------------------------
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) 
     {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
