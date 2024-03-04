@@ -9,7 +9,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.disk.opus.block.ModBlocks;
 import com.disk.opus.item.ModItems;
+
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Opus.MOD_ID)
@@ -26,6 +28,7 @@ public class Opus
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(eventBus);
+        ModBlocks.register(eventBus);
 
         eventBus.addListener(this::setup);
         
