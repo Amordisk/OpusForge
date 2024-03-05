@@ -60,6 +60,13 @@
         <property name="message" value="Line has trailing spaces." />
     </module>
 
+    <module name="RegexpOnFilename">
+        <property name="folderPattern" value="[\\/]src[\\/]test[\\/]" />
+        <property name="fileNamePattern" value=".*Tests.java$" />
+        <property name="match" value="false" />
+        <message key="regexp.filename.mismatch" value="Test files must end in '.*Tests.java'" />
+    </module>
+
     <!-- Checks for Headers                                -->
     <!-- See https://checkstyle.org/checks/header/index.html   -->
     <!-- <module name="Header"> -->
@@ -68,6 +75,8 @@
     <!-- </module> -->
 
     <module name="TreeWalker">
+
+        <module name="EmptyLineSeparator" />
 
         <!-- Checks for Javadoc comments.                     -->
         <!-- See https://checkstyle.org/checks/javadoc/index.html -->

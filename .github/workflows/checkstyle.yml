@@ -20,9 +20,14 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
 
-      - name: Run Checkstyle
+      - name: Run CheckstyleMain
         run: |
           ./gradlew checkstyleMain
+        working-directory: ${{ github.workspace }}
+        
+      - name: Run CheckstyleTest
+        run: |
+          ./gradlew checkstyleTest
         working-directory: ${{ github.workspace }}
 
       - name: Save Checkstyle report
