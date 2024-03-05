@@ -9,17 +9,16 @@ on:
       - main
 
 jobs:
-  linter_name:
-    name: runner / checkstyle
+  checkstyle_job:
     runs-on: ubuntu-latest
+    name: Checkstyle job
     steps:
-      - uses: actions/checkout@v2
-      - uses: asaasdev/checkstyle-action@v1
-        with:
-          github_token: ${{ secrets.github_token }}
-          # Change reviewdog reporter if you need [github-pr-check,github-check,github-pr-review].
-          reporter: github-pr-check
-          # Change reporter level if you need.
-          # GitHub Status Check won't become failure with warning.
-          level: error
-          configuration_file: "checkstyle.xml"
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Run check style
+      uses: nikitasavinov/checkstyle-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        reporter: 'github-pr-check'
+        tool_name: 'testtool'
+        level: 'error'
