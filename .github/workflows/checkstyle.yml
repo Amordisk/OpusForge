@@ -25,6 +25,13 @@ jobs:
           ./gradlew checkstyleMain
         working-directory: ${{ github.workspace }}
 
+      - name: Save Checkstyle report
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: checkstyle-report
+          path: build/reports/checkstyle/main.html
+
       - name: Fail Pull Request if Checkstyle fails
         if: ${{ failure() }}
         run: exit 1
