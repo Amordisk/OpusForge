@@ -17,11 +17,12 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v2
         with:
+          distribution: 'temurin'
           java-version: '11'
 
       - name: Run Checkstyle
         run: |
-          ./gradlew checkstyleMain
+          ./gradlew checkstyleMain -PcheckstyleConfigFile=checkstyle.xml
         working-directory: ${{ github.workspace }}
 
       - name: Fail Pull Request if Checkstyle fails
