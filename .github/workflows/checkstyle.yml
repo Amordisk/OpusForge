@@ -7,24 +7,15 @@ on:
   pull_request:
     branches:
       - main
-
+      
 jobs:
-  build:
+  checkstyle:
+    name: runner / checkstyle
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up JDK
-      uses: actions/setup-java@v2
-      with:
-        java-version: '11'
-        
-    - name: Set up Gradle
-      uses: actions/setup-java@v2
-      with:
-        distribution: 'wrapper' 
-        
-    - name: Run Checkstyle
-      run: ./gradlew checkstyleMain
+      - uses: actions/checkout@v4
+      - uses: dbelyaev/action-checkstyle@master
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+          checkstyle_config: sun_checks.xml
