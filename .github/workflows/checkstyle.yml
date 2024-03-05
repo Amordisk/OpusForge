@@ -7,17 +7,18 @@ on:
   pull_request:
     branches:
       - main
-      
+
 jobs:
-  checkstyle_job:
+  linter_name:
+    name: runner / checkstyle
     runs-on: ubuntu-latest
-    name: Checkstyle job
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Run check style
-      uses: nikitasavinov/checkstyle-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        reporter: 'github-pr-check'
-        tool_name: 'testtool'
+      - uses: actions/checkout@v2
+      - uses: asaasdev/checkstyle-action@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          # Change reviewdog reporter if you need [github-pr-check,github-check,github-pr-review].
+          reporter: github-pr-check
+          # Change reporter level if you need.
+          # GitHub Status Check won't become failure with warning.
+          level: error
