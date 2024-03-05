@@ -23,9 +23,6 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
-      - name: Run tests
-        run: ./gradlew test
-
       - name: Publish artifacts
         uses: actions/upload-artifact@v2
         with:
