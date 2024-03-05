@@ -20,3 +20,4 @@ jobs:
           reporter: github-pr-check
           checkstyle_config: ./checkstyle.xml
           level: 'error'
+          fail_on_error: true
