@@ -1,0 +1,41 @@
+name: Unit Tests
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  unittests:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Run tests
+        run: ./gradlew test
+
+      - name: Publish artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: build/test-results
+          
+      - name: Check for test failures
+        run: |
+          failures=$(grep -c 'failure' build/test-results/*.xml || true)
+          if [ $failures -gt 0 ]; then
+            echo "Some Unit Tests failed"
+            exit 1
+          fi
