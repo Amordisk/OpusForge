@@ -23,6 +23,9 @@ public final class ModItems
     public static final RegistryObject<Item> TEST_TUBE = ITEMS.register("test_tube",
         () -> new Item(new Item.Properties().tab(ModCreativeModeTab.OPUS_TAB)));
 
+    public static final RegistryObject<Item> ERLENMEYER_FLASK = ITEMS.register("erlenmeyer_flask",
+        () -> new Item(new Item.Properties().tab(ModCreativeModeTab.OPUS_TAB)));
+
     //#endregion
 
     public static void register(final IEventBus eventBus)
