@@ -1,4 +1,4 @@
-name: Checkstyle
+name: reviewdog
 
 on:
   push:
