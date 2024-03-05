@@ -9,6 +9,7 @@ public final class ModCreativeModeTab
     {
         throw new UnsupportedOperationException();
     }
+
     public static final CreativeModeTab OPUS_TAB = new CreativeModeTab("opustab")
     {
         @Override

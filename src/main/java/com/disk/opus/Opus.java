@@ -16,6 +16,7 @@ import com.disk.opus.item.ModItems;
 public class Opus
 {
     public static final String MOD_ID = "opus";
+
     private static final Logger LOGGER = LogManager.getLogger();
 
     public Opus()

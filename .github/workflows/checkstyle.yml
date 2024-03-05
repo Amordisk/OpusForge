@@ -1,0 +1,42 @@
+name: Checkstyle
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  checkstyle:
+    name: Checkstyle
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+
+      - name: Run CheckstyleMain
+        run: |
+          ./gradlew checkstyleMain
+        working-directory: ${{ github.workspace }}
+        
+      - name: Run CheckstyleTest
+        run: |
+          ./gradlew checkstyleTest
+        working-directory: ${{ github.workspace }}
+
+      - name: Save Checkstyle report
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: checkstyle-report
+          path: build/reports/checkstyle/main.html
+
+      - name: Fail Pull Request if Checkstyle fails
+        if: ${{ failure() }}
+        run: exit 1
