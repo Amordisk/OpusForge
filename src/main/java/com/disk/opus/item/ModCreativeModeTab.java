@@ -3,8 +3,12 @@ package com.disk.opus.item;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
-public class ModCreativeModeTab 
+public final class ModCreativeModeTab
 {
+    private ModCreativeModeTab()
+    {
+        throw new UnsupportedOperationException();
+    }
     public static final CreativeModeTab OPUS_TAB = new CreativeModeTab("opustab")
     {
         @Override

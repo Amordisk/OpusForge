@@ -18,7 +18,7 @@ public class Opus
     public static final String MOD_ID = "opus";
     private static final Logger LOGGER = LogManager.getLogger();
 
-    public Opus() 
+    public Opus()
     {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -26,7 +26,7 @@ public class Opus
         ModBlocks.register(eventBus);
 
         eventBus.addListener(this::setup);
-        
+
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
