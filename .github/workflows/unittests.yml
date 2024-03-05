@@ -20,19 +20,12 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
 
-      - name: Build with Gradle
+      - name: Build with Gradle and Run Tests
         run: ./gradlew build
 
       - name: Publish artifacts
+        if: ${{ failure() }}
         uses: actions/upload-artifact@v2
         with:
           name: test-results
           path: build/test-results
-          
-      - name: Check for test failures
-        run: |
-          failures=$(grep -c 'failure' build/test-results/*.xml || true)
-          if [ $failures -gt 0 ]; then
-            echo "Some Unit Tests failed"
-            exit 1
-          fi
