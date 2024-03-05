@@ -25,7 +25,7 @@ public final class ModItems
 
     //#endregion
 
-    public static void register(final IEventBus eventBus)
+    public static void register(final IEventBus eventBus) 
     {
         ITEMS.register(eventBus);
     }

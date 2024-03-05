@@ -22,7 +22,7 @@ jobs:
 
       - name: Run Checkstyle
         run: |
-          ./gradlew checkstyleMain -PcheckstyleConfigFile=checkstyle.xml
+          ./gradlew checkstyleMain
         working-directory: ${{ github.workspace }}
 
       - name: Fail Pull Request if Checkstyle fails
