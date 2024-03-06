@@ -26,21 +26,21 @@ public class Flask extends Item
     {
         super(properties);
     }
-    
+
+    @SuppressWarnings("null")
     @Override
-    public InteractionResultHolder<ItemStack> use( @Nonnull Level world, @Nonnull Player player, @Nonnull InteractionHand hand)
+    public final InteractionResultHolder<ItemStack> use(@Nonnull final Level world, @Nonnull final Player player, @Nonnull final InteractionHand hand)
     {
         ItemStack itemstack = player.getItemInHand(hand);
         HitResult hitresult = getPlayerPOVHitResult(world, player, ClipContext.Fluid.SOURCE_ONLY);
         if (hitresult.getType() == HitResult.Type.MISS)
         {
             return InteractionResultHolder.pass(itemstack);
-        }
-        else
+        } else
         {
             if (hitresult.getType() == HitResult.Type.BLOCK)
             {
-                BlockPos blockpos = ((BlockHitResult)hitresult).getBlockPos();
+                BlockPos blockpos = ((BlockHitResult) hitresult).getBlockPos();
                 if (!world.mayInteract(player, blockpos))
                 {
                     return InteractionResultHolder.pass(itemstack);
@@ -48,15 +48,18 @@ public class Flask extends Item
                 if (world.getFluidState(blockpos).is(FluidTags.WATER))
                 {
                     world.gameEvent(player, GameEvent.FLUID_PICKUP, blockpos);
-                    return InteractionResultHolder.sidedSuccess(this.turnBottleIntoItem(itemstack, player, PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.WATER)), world.isClientSide());
+                    return InteractionResultHolder.sidedSuccess(this.turnBottleIntoItem(
+                        itemstack, player, PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.WATER)), world.isClientSide());
                 }
             }
             return InteractionResultHolder.pass(itemstack);
         }
     }
-    protected ItemStack turnBottleIntoItem(ItemStack itemstack, Player player, ItemStack seconditemstack)
+
+    @SuppressWarnings("null")
+    protected final ItemStack turnBottleIntoItem(@Nonnull final ItemStack emptyitem, final Player player, @Nonnull final ItemStack filleditem)
     {
         player.awardStat(Stats.ITEM_USED.get(this));
-        return ItemUtils.createFilledResult(itemstack, player, seconditemstack);
+        return ItemUtils.createFilledResult(emptyitem, player, filleditem);
     }
 }

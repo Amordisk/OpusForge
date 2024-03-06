@@ -27,6 +27,9 @@ public final class ModItems
     public static final RegistryObject<Item> ERLENMEYER_FLASK = ITEMS.register("erlenmeyer_flask",
         () -> new Flask(new Item.Properties().tab(ModCreativeModeTab.OPUS_TAB)));
 
+    public static final RegistryObject<Item> ROUNDBOTTOM_FLASK = ITEMS.register("roundbottom_flask",
+        () -> new Flask(new Item.Properties().tab(ModCreativeModeTab.OPUS_TAB)));
+
     //#endregion
 
     public static void register(final IEventBus eventBus)
