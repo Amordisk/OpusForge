@@ -2,6 +2,8 @@ package com.disk.opus.item.glassware;
 
 import javax.annotation.Nonnull;
 
+import com.disk.opus.item.ModItems;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.FluidTags;
@@ -11,17 +13,17 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.PotionUtils;
-import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
+import net.minecraftforge.registries.RegistryObject;
 
 public class Flask extends Item
 {
+    protected static RegistryObject<Item> filledvariant = ModItems.FALLBACK;
+
     public Flask(final Properties properties)
     {
         super(properties);
@@ -48,8 +50,7 @@ public class Flask extends Item
                 if (world.getFluidState(blockpos).is(FluidTags.WATER))
                 {
                     world.gameEvent(player, GameEvent.FLUID_PICKUP, blockpos);
-                    return InteractionResultHolder.sidedSuccess(this.turnBottleIntoItem(
-                        itemstack, player, PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.WATER)), world.isClientSide());
+                    return InteractionResultHolder.sidedSuccess(this.turnBottleIntoItem(itemstack, player), world.isClientSide());
                 }
             }
             return InteractionResultHolder.pass(itemstack);
@@ -57,9 +58,9 @@ public class Flask extends Item
     }
 
     @SuppressWarnings("null")
-    protected final ItemStack turnBottleIntoItem(@Nonnull final ItemStack emptyitem, final Player player, @Nonnull final ItemStack filleditem)
+    protected final ItemStack turnBottleIntoItem(@Nonnull final ItemStack emptyitem, final Player player)
     {
         player.awardStat(Stats.ITEM_USED.get(this));
-        return ItemUtils.createFilledResult(emptyitem, player, filleditem);
+        return ItemUtils.createFilledResult(emptyitem, player, new ItemStack(filledvariant.get()));
     }
 }

@@ -30,6 +30,9 @@ public final class ModItems
     public static final RegistryObject<Item> ROUNDBOTTOM_FLASK = ITEMS.register("roundbottom_flask",
         () -> new Flask(new Item.Properties().tab(ModCreativeModeTab.OPUS_TAB)));
 
+    public static final RegistryObject<Item> FALLBACK = ITEMS.register("fallback",
+        () -> new Item(new Item.Properties()));
+
     //#endregion
 
     public static void register(final IEventBus eventBus)
