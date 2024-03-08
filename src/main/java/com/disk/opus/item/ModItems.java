@@ -21,21 +21,20 @@ public final class ModItems
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Opus.MOD_ID);
 
-    //#region Items
+    // #region Items
 
-    public static final RegistryObject<Item> TEST_TUBE = ITEMS.register("test_tube",
-        () -> new TestTube(new Item.Properties().tab(ModCreativeModeTab.OPUS_TAB)));
+    public static final RegistryObject<Item> TEST_TUBE =
+            ITEMS.register("test_tube", () -> new TestTube(new Item.Properties().tab(ModCreativeModeTab.OPUS_TAB)));
 
-    public static final RegistryObject<Item> ERLENMEYER_FLASK = ITEMS.register("erlenmeyer_flask",
-        () -> new ErlenmeyerFlask(new Item.Properties().tab(ModCreativeModeTab.OPUS_TAB)));
+    public static final RegistryObject<Item> ERLENMEYER_FLASK =
+            ITEMS.register("erlenmeyer_flask", () -> new ErlenmeyerFlask(new Item.Properties().tab(ModCreativeModeTab.OPUS_TAB)));
 
-    public static final RegistryObject<Item> ROUNDBOTTOM_FLASK = ITEMS.register("roundbottom_flask",
-        () -> new RoundBottomFlask(new Item.Properties().tab(ModCreativeModeTab.OPUS_TAB)));
+    public static final RegistryObject<Item> ROUNDBOTTOM_FLASK =
+            ITEMS.register("roundbottom_flask", () -> new RoundBottomFlask(new Item.Properties().tab(ModCreativeModeTab.OPUS_TAB)));
 
-    public static final RegistryObject<Item> FALLBACK = ITEMS.register("fallback",
-        () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FALLBACK = ITEMS.register("fallback", () -> new Item(new Item.Properties()));
 
-    //#endregion
+    // #endregion
 
     public static void register(final IEventBus eventBus)
     {
