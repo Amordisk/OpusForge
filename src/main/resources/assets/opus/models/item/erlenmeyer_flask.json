@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "opus:item/test_tube"
+        "layer0": "opus:item/erlenmeyer_flask"
     }
 }

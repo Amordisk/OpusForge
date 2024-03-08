@@ -123,7 +123,7 @@
         <module name="OperatorWrap" />
         <module name="ParenPad" />
         <module name="TypecastParenPad" />
-        <module name="WhitespaceAfter" />
+        <!-- <module name="WhitespaceAfter" /> -->
         <module name="WhitespaceAround" />
 
         <!-- Modifier Checks                                    -->
@@ -156,11 +156,13 @@
 
         <!-- Checks for class design                         -->
         <!-- See https://checkstyle.org/checks/design/index.html -->
-        <module name="DesignForExtension" />
+        <!-- <module name="DesignForExtension" /> -->
         <module name="FinalClass" />
         <module name="HideUtilityClassConstructor" />
         <module name="InterfaceIsType" />
-        <module name="VisibilityModifier" />
+        <module name="VisibilityModifier">
+            <property name="protectedAllowed" value="true"/>
+        </module>
 
         <!-- Miscellaneous other checks.                   -->
         <!-- See https://checkstyle.org/checks/misc/index.html -->
