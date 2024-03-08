@@ -19,7 +19,6 @@ import net.minecraft.world.phys.HitResult;
 
 public abstract class Flask extends Item
 {
-
     public Flask(final Properties properties)
     {
         super(properties);

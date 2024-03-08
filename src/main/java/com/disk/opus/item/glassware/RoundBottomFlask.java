@@ -6,7 +6,6 @@ import net.minecraft.world.item.Item;
 
 public class RoundBottomFlask extends Flask
 {
-
     public RoundBottomFlask(final Properties properties)
     {
         super(properties);

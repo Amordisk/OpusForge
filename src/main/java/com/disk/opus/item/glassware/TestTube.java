@@ -6,7 +6,6 @@ import net.minecraft.world.item.Item;
 
 public class TestTube extends Flask
 {
-
     public TestTube(final Properties properties)
     {
         super(properties);
