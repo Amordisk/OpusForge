@@ -1,6 +1,14 @@
 {
     "java.compile.nullAnalysis.mode": "automatic",
     "java.checkstyle.version": "10.14.0",
-    "java.checkstyle.configuration": "${workspaceFolder}/config/checkstyle/checkstyle.xml",
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.checkstyle.configuration": "${workspaceFolder}\\config\\checkstyle\\checkstyle.xml",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "always",
+        "source.organizeImports": "always",
+        "source.addMissingImports": "always",
+    },
+    "editor.formatOnSave": true,
+    "java.format.settings.url": ".vscode/java-formatter.xml",
+    "java.format.settings.profile": "JavaConventions"
 }

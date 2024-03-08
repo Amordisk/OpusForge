@@ -1,9 +1,10 @@
 package com.disk.opus.block;
 
+import java.util.function.Supplier;
+
 import com.disk.opus.Opus;
 import com.disk.opus.item.ModCreativeModeTab;
 import com.disk.opus.item.ModItems;
-import java.util.function.Supplier;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -26,12 +27,12 @@ public final class ModBlocks
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Opus.MOD_ID);
 
-    //#region Blocks
+    // #region Blocks
 
-    public static final RegistryObject<Block> SILICA_BLOCK = registerBlock("silica_block",
-        () -> new Block(BlockBehaviour.Properties.of(Material.SAND)), ModCreativeModeTab.OPUS_TAB);
+    public static final RegistryObject<Block> SILICA_BLOCK =
+            registerBlock("silica_block", () -> new Block(BlockBehaviour.Properties.of(Material.SAND)), ModCreativeModeTab.OPUS_TAB);
 
-    //#endregion
+    // #endregion
 
     private static <T extends Block> RegistryObject<T> registerBlock(final String name, final Supplier<T> block, final CreativeModeTab tab)
     {
