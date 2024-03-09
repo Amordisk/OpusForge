@@ -3,6 +3,7 @@ package com.disk.opus.block;
 import java.util.function.Supplier;
 
 import com.disk.opus.Opus;
+import com.disk.opus.block.glassware.FlaskBlock;
 import com.disk.opus.item.ModCreativeModeTab;
 import com.disk.opus.item.ModItems;
 
@@ -30,7 +31,7 @@ public final class ModBlocks
     // #region Blocks
 
     public static final RegistryObject<Block> SILICA_BLOCK =
-            registerBlock("silica_block", () -> new Block(BlockBehaviour.Properties.of(Material.SAND)), ModCreativeModeTab.OPUS_TAB);
+            registerBlock("silica_block", () -> new FlaskBlock(BlockBehaviour.Properties.of(Material.SAND)), ModCreativeModeTab.OPUS_TAB);
 
     // #endregion
 

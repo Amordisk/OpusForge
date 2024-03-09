@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.disk.opus.block.ModBlocks;
+import com.disk.opus.block.entity.ModBlockEntities;
 import com.disk.opus.item.ModItems;
 
 import net.minecraft.world.level.block.Blocks;
@@ -26,6 +27,7 @@ public class Opus
 
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModBlockEntities.register(eventBus);
 
         eventBus.addListener(this::setup);
 

@@ -61,10 +61,35 @@
     </module>
 
     <module name="RegexpOnFilename">
-        <property name="folderPattern" value="[\\/]src[\\/]test[\\/]" />
-        <property name="fileNamePattern" value=".*Tests.java$" />
+        <property name="folderPattern" value="[\\/]src[\\/]test" />
+        <property name="fileNamePattern" value=".*Tests\.java$" />
         <property name="match" value="false" />
         <message key="regexp.filename.mismatch" value="Test files must end in '.*Tests.java'" />
+    </module>
+
+    <module name="RegexpOnFilename">
+        <property name="folderPattern"
+            value="[\\/]src[\\/]main[\\/]java[\\/]com[\\/]disk[\\/]opus[\\/]item" />
+        <property name="fileNamePattern" value="(.*Item|ModItems|ModCreativeModeTab)\.java$" />
+        <property name="match" value="false" />
+        <message key="regexp.filename.mismatch" value="Item files must end in '.*Item.java'" />
+    </module>
+
+    <module name="RegexpOnFilename">
+        <property name="folderPattern"
+            value="[\\/]src[\\/]main[\\/]java[\\/]com[\\/]disk[\\/]opus[\\/]block(?![\\/]entity)" />
+        <property name="fileNamePattern" value="(.*Block|ModBlocks)\.java$" />
+        <property name="match" value="false" />
+        <message key="regexp.filename.mismatch" value="Block files must end in '.*Block.java'" />
+    </module>
+
+    <module name="RegexpOnFilename">
+        <property name="folderPattern"
+            value="[\\/]src[\\/]main[\\/]java[\\/]com[\\/]disk[\\/]opus[\\/]block[\\/]entity" />
+        <property name="fileNamePattern" value="(.*BlockEntity|ModBlockEntities)\.java$" />
+        <property name="match" value="false" />
+        <message key="regexp.filename.mismatch"
+            value="Block entity files must end in '.*BlockEntity.java'" />
     </module>
 
     <!-- Checks for Headers                                -->
@@ -163,7 +188,7 @@
         <module name="HideUtilityClassConstructor" />
         <module name="InterfaceIsType" />
         <module name="VisibilityModifier">
-            <property name="protectedAllowed" value="true"/>
+            <property name="protectedAllowed" value="true" />
         </module>
 
         <!-- Miscellaneous other checks.                   -->

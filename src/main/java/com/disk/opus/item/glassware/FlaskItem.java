@@ -17,9 +17,9 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 
-public abstract class Flask extends Item
+public abstract class FlaskItem extends Item
 {
-    public Flask(final Properties properties)
+    public FlaskItem(final Properties properties)
     {
         super(properties);
     }
@@ -37,7 +37,7 @@ public abstract class Flask extends Item
         {
             if (hitresult.getType() == HitResult.Type.BLOCK)
             {
-                BlockPos blockpos = ((BlockHitResult) hitresult).getBlockPos();
+                BlockPos blockpos = ((BlockHitResult)hitresult).getBlockPos();
                 if (!world.mayInteract(player, blockpos))
                 {
                     return InteractionResultHolder.pass(itemstack);

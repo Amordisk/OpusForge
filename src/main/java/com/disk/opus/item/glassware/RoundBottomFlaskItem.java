@@ -4,9 +4,9 @@ import com.disk.opus.item.ModItems;
 
 import net.minecraft.world.item.Item;
 
-public class RoundBottomFlask extends Flask
+public class RoundBottomFlaskItem extends FlaskItem
 {
-    public RoundBottomFlask(final Properties properties)
+    public RoundBottomFlaskItem(final Properties properties)
     {
         super(properties);
     }

@@ -4,9 +4,9 @@ import com.disk.opus.item.ModItems;
 
 import net.minecraft.world.item.Item;
 
-public class ErlenmeyerFlask extends Flask
+public class TestTubeItem extends FlaskItem
 {
-    public ErlenmeyerFlask(final Properties properties)
+    public TestTubeItem(final Properties properties)
     {
         super(properties);
     }

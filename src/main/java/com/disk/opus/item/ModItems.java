@@ -1,9 +1,9 @@
 package com.disk.opus.item;
 
 import com.disk.opus.Opus;
-import com.disk.opus.item.glassware.ErlenmeyerFlask;
-import com.disk.opus.item.glassware.RoundBottomFlask;
-import com.disk.opus.item.glassware.TestTube;
+import com.disk.opus.item.glassware.ErlenmeyerFlaskItem;
+import com.disk.opus.item.glassware.RoundBottomFlaskItem;
+import com.disk.opus.item.glassware.TestTubeItem;
 
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -24,13 +24,13 @@ public final class ModItems
     // #region Items
 
     public static final RegistryObject<Item> TEST_TUBE =
-            ITEMS.register("test_tube", () -> new TestTube(new Item.Properties().tab(ModCreativeModeTab.OPUS_TAB)));
+            ITEMS.register("test_tube", () -> new TestTubeItem(new Item.Properties().tab(ModCreativeModeTab.OPUS_TAB)));
 
     public static final RegistryObject<Item> ERLENMEYER_FLASK =
-            ITEMS.register("erlenmeyer_flask", () -> new ErlenmeyerFlask(new Item.Properties().tab(ModCreativeModeTab.OPUS_TAB)));
+            ITEMS.register("erlenmeyer_flask", () -> new ErlenmeyerFlaskItem(new Item.Properties().tab(ModCreativeModeTab.OPUS_TAB)));
 
     public static final RegistryObject<Item> ROUNDBOTTOM_FLASK =
-            ITEMS.register("roundbottom_flask", () -> new RoundBottomFlask(new Item.Properties().tab(ModCreativeModeTab.OPUS_TAB)));
+            ITEMS.register("roundbottom_flask", () -> new RoundBottomFlaskItem(new Item.Properties().tab(ModCreativeModeTab.OPUS_TAB)));
 
     public static final RegistryObject<Item> FALLBACK = ITEMS.register("fallback", () -> new Item(new Item.Properties()));
 
