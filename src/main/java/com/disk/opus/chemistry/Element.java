@@ -2,7 +2,6 @@ package com.disk.opus.chemistry;
 
 public enum Element
 {
-    R_GROUP("R", 0.0001f, 2.5f),
     //alkali metals
     LITHIUM("Li", 6.941f, 0.9f),
     SODIUM("Na", 22.990f, 0.9f),
@@ -112,8 +111,29 @@ public enum Element
     //stopping here cuz the rest are rather unstable/have few uses
     ;
 
+    private String symbol;
+    private Float mass;
+    private Float electronegativity;
+
     private Element(String symbol, Float mass, Float electronegativity)
     {
-        
-    }
+        this.symbol = symbol;
+        this.mass = mass;
+        this.electronegativity = electronegativity;
+    };
+
+    public String getSymbol() 
+    {
+        return this.symbol;
+    };
+
+    public Float getMass()
+    {
+        return this.mass;
+    };
+
+    public Float getElectronegativity()
+    {
+        return this.electronegativity;
+    };
 }
